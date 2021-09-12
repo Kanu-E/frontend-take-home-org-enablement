@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Events =()=>{
-
+const Events =({events})=>{
+    console.log(events)
     return (
-        <div>
-            event
+        <div className="container">
+            Events
         </div>
     )
 }

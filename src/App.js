@@ -1,5 +1,5 @@
-import React, {Component} from "react"
-import Events from "./components/Events"
+import React, {Component} from "react";
+import Events from "./components/Events";
 
 class App extends Component{
 
@@ -14,11 +14,10 @@ class App extends Component{
    });
   }
   
-  
   render(){
 
     return (
-      <div>Events</div>
+      <div><Events events={this.state.events}/></div>
     )
   }
 
