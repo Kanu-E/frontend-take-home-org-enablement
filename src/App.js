@@ -1,16 +1,17 @@
 import React, {Component} from "react"
+import Events from "./components/Events"
 
 class App extends Component{
 
+  state = {events: []}
 
   componentDidMount(){
     fetch('/events')
     .then(res => {
       return res.json()
    }).then(res => {
-     console.log(res)
-     ;
-   })
+      this.setState({events: res.events})
+   });
   }
   
   
