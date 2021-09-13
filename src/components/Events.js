@@ -37,7 +37,11 @@ class Events extends Component {
         <div >
             {renderedEvents}
             {selected&&(
-                <div className="box" onClick={()=>this.setState({selectedEvent: null})}>
+                <div className="box" >
+                    <div className= "close-button" onClick={()=>this.setState({selectedEvent:null})}>
+                        <div></div>
+                        <div></div>
+                    </div>
                     <SelectedEvent  event={selected}/>
                 </div>
             )}
