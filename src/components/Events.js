@@ -4,7 +4,11 @@ import "../styles.css";
 
 class Events extends Component {
 
-    state = {events:[]}
+    state = {
+        events:[], 
+        eventsLoaded: 3,
+        selectedEvent: null
+    }
 
     componentDidMount(){
         fetch('/events')
@@ -14,16 +18,30 @@ class Events extends Component {
                 this.setState({events: res.events})
         });
     }
-    
-    render(){
 
-    const renderedEvents = this.state.events.map(event => <Event key={event.id} event={event}/>);
+    handleChange = (eventId) => {   
+        this.setState({selectedEvent: eventId})    
+    }
+
+
+
+    render(){
+    let renderedEvents = this.state.events.slice(0, this.state.eventsLoaded).map(event => {
+        return <Event key={event.id} event={event} 
+        handleChange={this.handleChange}/>
+    });
+    let selected;
+    if(this.state.selectedEvent) selected = this.state.events.find(event => event.id === this.state.selectedEvent)
+    console.log(selected)
     return ( 
         <div >
             {renderedEvents}
-            <div>
-                <button className="btn btn-more"> Load More </button>
-            </div>
+            {selected&&(
+                <div>
+                    got selected
+                </div>
+            )}
+            <button onClick={()=>this.setState({eventsLoaded:this.state.eventsLoaded+3})} className="btn btn-more"> Load More </button>      
         </div>
     )};
 }
