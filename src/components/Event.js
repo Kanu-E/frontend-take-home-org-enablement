@@ -2,7 +2,7 @@ import React from 'react';
 import "../styles.css";
 
 
-const Event =({event, handleChange})=>{
+const Event =({event, handleEventClick})=>{
     let fullDate = new Date(event.event_start)
     let endDate = new Date(event.event_end)
     let date = fullDate.toLocaleDateString("en-US")
@@ -10,7 +10,7 @@ const Event =({event, handleChange})=>{
     let endTime  = endDate.toLocaleTimeString("en-US")
 
     return (
-        <div className = "column" onClick={()=> handleChange(event.id)}>
+        <div className = "column" onClick={()=> handleEventClick(event.id)}>
             <div className = "card">
                 <div className = "top-right">  
                     <p>{event.event_end? `${time} - ${endTime}` : time}</p>
