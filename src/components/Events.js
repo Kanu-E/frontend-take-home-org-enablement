@@ -19,6 +19,12 @@ class Events extends Component {
                 this.setState({events: res.events})
         });
     }
+    componentWillMount() {
+        const scriptTag = document.createElement("script");
+        scriptTag.src = "https://use.typekit.net/hello.js";
+        scriptTag.async = true;
+        document.body.appendChild(scriptTag);
+    }
 
     handleEventClick = (eventId) => {   
         this.setState({selectedEvent: eventId})
@@ -45,7 +51,7 @@ class Events extends Component {
                     <SelectedEvent  event={selected}/>
                 </div>
             )}
-            <button onClick={()=>this.setState({eventsLoaded:this.state.eventsLoaded+3})} className="btn btn-more"> Load More </button>      
+            <button onClick={()=>this.setState({eventsLoaded:this.state.eventsLoaded+3})} className="btn btn-more"> Load More </button>   
         </div>
     )};
 }

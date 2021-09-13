@@ -43,6 +43,7 @@
 }
 
 button{
+    cursor: pointer;
     color:  rgb(155, 169, 238);
     border-color: rgb(127, 139, 201);
     border-radius: 6px;
@@ -69,6 +70,7 @@ button{
 
 
 .close-button{
+    cursor: pointer;
     position: absolute;
     right: 2%; 
 }

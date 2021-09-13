@@ -20,6 +20,10 @@ const SelectedEvent =({event})=>{
                         <h3> Date and Time </h3>
                         <p>{date}</p>
                         <p>{event.event_end? `${time} - ${endTime}` : time}</p> 
+                        {/* <ReactMapGL
+                            {...viewport}
+                            onViewportChange={nextViewport => setViewport(nextViewport)}
+                        /> */}
                     </div>
                 </div> 
             {event.venue&&(
