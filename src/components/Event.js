@@ -8,11 +8,11 @@ const Event =({event})=>{
     let date = fullDate.toLocaleDateString("en-US")
     let time = fullDate.toLocaleTimeString("en-US")
     let endTime  = endDate.toLocaleTimeString("en-US")
-    console.log(event)
+
     return (
         <div className = "column">
             <div className = "card">
-                <div className = "bottom">  
+                <div className = "top-right">  
                     <p>{event.event_end? `${time} - ${endTime}` : time}</p>
                     <p>{event.venue? event.venue.name: ''}</p>         
                 </div>
