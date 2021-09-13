@@ -34,3 +34,17 @@
     color:  white;
     opacity: 0.5;
 }
+
+.btn-more{
+    color:  rgb(47, 63, 146);
+    border-color: rgb(47, 63, 146);
+    border-radius: 6px;
+    width: 100px;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
