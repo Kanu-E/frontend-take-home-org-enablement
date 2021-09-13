@@ -3,7 +3,7 @@ import Events from "./components/Events";
 
  const App =()=>{
     return (
-      <div><Events /></div>
+      <div><Events/></div>
     )
 }
 

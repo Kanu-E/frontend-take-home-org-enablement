@@ -10,15 +10,17 @@ const SelectedEvent =({event})=>{
     let endTime  = endDate.toLocaleTimeString("en-US")
 
     return (
-        <div className = "blue">
+        <div className = "select-box">
             <div className ="title">
                 {event.title}
             </div>
                 <div className ="details">
-                    <h2>Event Details</h2>
-                    <h3> Date and Time </h3>
-                    <p>{date}</p>
-                    <p>{event.event_end? `${time} - ${endTime}` : time}</p>  
+                    <div>
+                        <h2>Event Details</h2>
+                        <h3> Date and Time </h3>
+                        <p>{date}</p>
+                        <p>{event.event_end? `${time} - ${endTime}` : time}</p> 
+                    </div>
                 </div> 
             {event.venue&&(
             <div className = "venue">
