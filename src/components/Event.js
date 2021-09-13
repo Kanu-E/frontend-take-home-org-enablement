@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../styles.css";
 
 
 const Event =({event})=>{
@@ -8,17 +8,21 @@ const Event =({event})=>{
     let date = fullDate.toLocaleDateString("en-US")
     let time = fullDate.toLocaleTimeString("en-US")
     let endTime  = endDate.toLocaleTimeString("en-US")
+    console.log(event)
     return (
-    <div>
-        <div>  
-            <div>{event.event_end? `${time} - ${endTime}` : time}</div>
-            <div>{event.venue? event.venue.name: 'Venue TBD'}</div>
-            <img src={event.image_url} alt={event.title} />
-        </div>
-        <div>{event.title}</div>
-        <div>{date}, {event.venue? event.venue.city: 'City TBD'}</div>
-        
-    </div>
+        <div className = "column">
+            <div className = "card">
+                <div className = "bottom">  
+                    <p>{event.event_end? `${time} - ${endTime}` : time}</p>
+                    <p>{event.venue? event.venue.name: ''}</p>         
+                </div>
+                    <img src={event.image_url} alt={event.title} />
+                <div>
+                    <h2>{event.title}</h2>
+                    <p> {date}{event.venue? `, ${event.venue.city}`: ''} </p>
+                </div>
+            </div>
+        </div>      
     );
 };
 

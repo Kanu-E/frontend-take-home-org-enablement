@@ -1,1 +1,36 @@
 /* You can add CSS here! */
+.container{
+    padding-top: 3px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+}
+
+.column {
+    padding: 5px;
+    float: left;
+    width: 32%;
+}
+
+.card > img {
+    width: 98%;
+    height: 400px;
+    border-radius: 6px;
+    border-color: rgb(219, 214, 214);
+}
+
+.bottom {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    background-color: rgb(151, 151, 167);
+    color:  white;
+    opacity: 0.5;
+}
